@@ -9,12 +9,17 @@
   */
   
   //CODE HERE
-
+function myFunc(){
+  var myStr='super secret string';
+  return function getSecretString(){
+    console.log(myFunc()) 
+  }
+}
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
   //CODE HERE
-  
+  let secretString=myFunc()
   
   ////////////PROBLEM 2////////////
 
@@ -29,22 +34,33 @@
   */
   
   //CODE HERE
+  function lightSwitch(){
+    let isTheLightOn=false
+  function flipTheSwitch(){
+    if(isTheLightOn==false){
+      true
+    }
+    else{
+      false
+    }
 
+  }
+  }
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
   //CODE HERE
-
+let kitchenSwitch=lightSwitch
   
   //Invoke kitchenSwitch.
 
   //CODE HERE
-  
+ 
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
-  
+  let bathroomSwitch=lightSwitch
   
   //Invoke bathroomSwitch twice.
   
@@ -64,8 +80,16 @@
   */
 
   //CODE HERE
-
-
+function plantTracker(){
+  let plant='fern';
+  let height=12;
+  return{
+  readInfo:function(){
+    return `This is a ${plant} plant that is ${height} inches tall.`
+  },
+  waterPlant:function(){}
+}
+}
   ////////////PROBLEM 4////////////
 
   /*
@@ -79,6 +103,17 @@
   */
 
   //CODE HERE
+function inventory(){
+  let products=[];
+  return{
+  readProducts:function(){
+  return products()
+  },
+  addtoProducts:function(){
+
+  }
+}
+}
 
 
   /*
@@ -86,7 +121,7 @@
   */
 
   //CODE HERE
-
+let shoes=inventory()
 
   /*
     Add an item to your shoes array using the addToProducts function
