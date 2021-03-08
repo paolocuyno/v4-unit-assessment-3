@@ -70,7 +70,9 @@ let ralph= new NPC('Ralph','human','Niceland',"I'm gonna wreck it!")
 */
 
 //CODE HERE
-
+let ralphsInfo=ralph.getInfo()
+let ralphsDialogue=ralph.dialogue()
+let ralphsLocation='Niceland'
 //////////////////PROBLEM 3////////////////////
 
 /*
@@ -101,9 +103,20 @@ class Player extends Character{
     this.healthLevel=healthLevel;
     this.attackLevel=attackLevel;
   }
-  defend(){
-
+  defend(attackLevel){
+    return healthLevel-attackLevel;
+    if (healthLevel>0){
+      return{
+        attackStrength:attackLevel,
+        remainingHealth:healthLevel,
+        message:this.name+' '+'is still in the fight!'
+      }
   }
+    else{
+      return this.name+' '+'has been defeated!'
+    }
+  }
+  
 }
 
 
@@ -138,7 +151,7 @@ let ozai={
 */
 
 //CODE HERE
-
+let battle=ozai
 //////////////////PROBLEM 4////////////////////
 
 /*
@@ -159,9 +172,14 @@ let ozai={
 class Hero extends Player{
   constructor(name,type,healthLevel,attackLevel,superPowers){
     super(name,type,healthLevel,attackLevel)
-    this.superPowers=superPowers;
+    this.superPowers=[];
   }
-  addSuperPower(){
+  addSuperPower(power){
+    superPowers.push(power)
+
+  }
+  useSuperPower(index){
+  
 
   }
 
@@ -177,4 +195,6 @@ class Hero extends Player{
 */
 
 //CODE HERE
-const fireSpitter=new Hero('FireSpitter','dragon',5000,5000)
+const fireSpitter=new Hero('Fire Spitter','dragon',5000,5000);
+Hero.addSuperPower('spitting fire','flying','running');
+useSuperPower

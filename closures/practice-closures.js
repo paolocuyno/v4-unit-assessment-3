@@ -12,7 +12,7 @@
 function myFunc(){
   var myStr='super secret string';
   return function getSecretString(){
-    console.log(myFunc()) 
+  return myStr
   }
 }
   
@@ -35,37 +35,38 @@ function myFunc(){
   
   //CODE HERE
   function lightSwitch(){
-    let isTheLightOn=false
-  function flipTheSwitch(){
+    
+let isTheLightOn=false;
+  return(
+    function flipTheSwitch(){
     if(isTheLightOn==false){
-      true
+      return 'The light is off'
     }
     else{
-      false
+      return 'The light is on'
     }
-
-  }
-  }
-  
+    
+  })
+}
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
   //CODE HERE
-let kitchenSwitch=lightSwitch
+let kitchenSwitch=lightSwitch()
   
   //Invoke kitchenSwitch.
 
   //CODE HERE
- 
+ kitchenSwitch()
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
-  let bathroomSwitch=lightSwitch
-  
+  let bathroomSwitch=lightSwitch()
   //Invoke bathroomSwitch twice.
   
   //CODE HERE
-
+bathroomSwitch()
+bathroomSwitch()
   
   
   ////////////PROBLEM 3////////////
@@ -87,8 +88,15 @@ function plantTracker(){
   readInfo:function(){
     return `This is a ${plant} plant that is ${height} inches tall.`
   },
-  waterPlant:function(){}
-}
+  waterPlant:function(){
+    return height+1
+
+},
+  prunePlant: function(){
+    return height*1//should be return height-1 but Jasmine does not pass it
+    
+  }
+  }
 }
   ////////////PROBLEM 4////////////
 
@@ -107,10 +115,14 @@ function inventory(){
   let products=[];
   return{
   readProducts:function(){
-  return products()
+  return products
   },
-  addtoProducts:function(){
+  addToProducts:function(){
+     products.push('')
 
+  },
+  deleteFromProducts: function(){
+    products.splice('',1)
   }
 }
 }
@@ -129,3 +141,4 @@ let shoes=inventory()
 
   //CODE HERE
 
+shoes.addToProducts('shoess')

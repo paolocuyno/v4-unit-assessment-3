@@ -4,20 +4,16 @@ import './App.css';
 import Header from './Components/Header'
 import Booklist from './Components/Booklist';
 import Shelf from './Components/Shelf';
-import Data from './data'
+import books from './books'
 
 class App extends Component{
  constructor(){
    super()
  
   this.state={
-    books:[<Data/>],
-    shelf:[]
+    books:[]
   }
-// this.filterN=this.clearSearch.bind(this)  
-// this.addToShelf=this.addToShelf.bind(this);
-// this.clearShelf=this.clearShelf.bind(this);
-// this.reset=this.reset.bind(this);
+
 
 
 
@@ -28,7 +24,7 @@ class App extends Component{
       <header className="App-header">
        <Header/> 
       </header>
-      <section className='apple'>
+      <section className='bookshelf'>
       <Booklist books={this.state.books}/>
       <Shelf/>
       </section>

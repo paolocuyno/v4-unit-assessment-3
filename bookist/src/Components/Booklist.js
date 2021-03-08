@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
+import books from '../books'
 
 
-const Booklist =(props) => {
-    const{data,index}=props
+class Booklist extends Component{
+
+
+
+
+    render(){
     return(
         <div className='list'>
         <input></input>
         <button>Search</button>
         <button>Clear Search</button>
-        {/* <h1>{data[index].books.map(elem =><li>{elem}</li>)}</h1> */}
-
+        {/* <p className='booksArray' onClick></p> */}
         </div>
     )
-}
 
+    }}
 export default Booklist
