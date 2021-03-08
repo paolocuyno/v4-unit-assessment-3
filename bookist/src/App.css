@@ -41,6 +41,8 @@
 .bookshelf{
   display:inline-flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
 }
 
 .list{
@@ -51,3 +53,32 @@
 
 }
 
+.map{
+ width: 100%;
+  height:600px;
+  border-right: black solid ;
+}
+
+ul{  
+
+word-wrap:break-word ;
+display: inline-table;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+
+
+
+}
+
+img{
+  margin-right: 5px;
+  margin-top:20px;
+  height: 100px;
+  width:70px
+}
+
+
+.Shelf{
+justify-content: right;
+}

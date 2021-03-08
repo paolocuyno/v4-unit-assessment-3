@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-const Shelf=(props)=> {
-    const {data,index}=props
-    return(
-        <div>
-           <h4>Your Shelf</h4>
-           {/* <section>img src='{data[index].img}'</section> */}
-            <button onClick={props.clearShelf}>Clear Shelf</button>
+class Shelf extends React.Component {
+    render() {
+        var mappedBooks = this.props.books.map((book, index) => {
+            return (<div
+                onClick={() => this.props.onClick(book)}>
+               
+                <b>{book.title}</b><br />
+              
+            </div>
+            );
+        });
 
-        </div>
-    )
-}
+        return (
+            <div className='shelf'>
+                
+                <h3>Shelf</h3>
+                <div>
+                    {mappedBooks}
+                </div >
+            </div>
+        );
+    }
+};
 export default Shelf
